@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Business Growth Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; align-content: center; padding: 5%;display: flex; flex-direction: column; }
+        h1 { color: #333; text-align: center; }
+        form { margin-bottom: 20px; align-items: center; display: flex; flex-direction: column; }
+        label { display: block; margin-top: 10px; }
+        input[type="number"] { width: 200px; padding: 5px; }
+        input[type="submit"] { margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #218838; }
+        h2 { color: #007bff; }
+    </style>
+</head>
+<body>
+    <h1>Predict Profit for a Startup</h1>
+    <form method="POST">
+        <label>R&D Spend:</label><br>
+        <input type="number" name="R_and_D" step="0.01" required><br><br>
+        
+        <label>Administration Spend:</label><br>
+        <input type="number" name="Administration" step="0.01" required><br><br>
+        
+        <label>Marketing Spend:</label><br>
+        <input type="number" name="Marketing" step="0.01" required><br><br>
+        
+        <input type="submit" value="Predict Profit">
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Predicted Profit: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
