@@ -1,35 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Business Growth Prediction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Profit Prediction</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; align-content: center; padding: 5%;display: flex; flex-direction: column; }
-        h1 { color: #333; text-align: center; }
-        form { margin-bottom: 20px; align-items: center; display: flex; flex-direction: column; }
-        label { display: block; margin-top: 10px; }
-        input[type="number"] { width: 200px; padding: 5px; }
-        input[type="submit"] { margin-top: 20px; padding: 10px 20px; background-color: #28a745; color: white; border: none; cursor: pointer; }
-        input[type="submit"]:hover { background-color: #218838; }
-        h2 { color: #007bff; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+            width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-top: 12px;
+            font-weight: 500;
+            color: #444;
+            text-align: left;
+            width: 100%;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1.5px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input[type="number"]:focus {
+            border-color: #5563DE;
+            box-shadow: 0 0 5px rgba(85,99,222,0.4);
+        }
+        input[type="submit"] {
+            margin-top: 25px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            background-color: #5563DE;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4451c0;
+        }
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #e7f0ff;
+            color: #2a4dbd;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #777;
+        }
     </style>
 </head>
 <body>
-    <h1>Predict Profit for a Startup</h1>
-    <form method="POST">
-        <label>R&D Spend:</label><br>
-        <input type="number" name="R_and_D" step="0.01" required><br><br>
-        
-        <label>Administration Spend:</label><br>
-        <input type="number" name="Administration" step="0.01" required><br><br>
-        
-        <label>Marketing Spend:</label><br>
-        <input type="number" name="Marketing" step="0.01" required><br><br>
-        
-        <input type="submit" value="Predict Profit">
-    </form>
+    <div class="container">
+        <h1>Startup Profit Predictor 💼</h1>
+        <form method="POST">
+            <label for="R_and_D">R&D Spend:</label>
+            <input type="number" name="R_and_D" id="R_and_D" step="0.01" required>
 
-    {% if prediction is not none %}
-        <h2>Predicted Profit: {{ prediction }}</h2>
-    {% endif %}
+            <label for="Administration">Administration Spend:</label>
+            <input type="number" name="Administration" id="Administration" step="0.01" required>
+
+            <label for="Marketing">Marketing Spend:</label>
+            <input type="number" name="Marketing" id="Marketing" step="0.01" required>
+
+            <input type="submit" value="Predict Profit">
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            Predicted Profit: ${{ prediction }}
+        </div>
+        {% endif %}
+
+        <div class="footer">
+            <p>Created by <strong>Shiva Bommera</strong></p>
+        </div>
+    </div>
 </body>
 </html>
+
+
