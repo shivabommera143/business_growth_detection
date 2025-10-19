@@ -6,6 +6,9 @@ from sklearn import metrics
 from mangum import Mangum
 import os
 import tempfile
+import warnings
+
+warnings.filterwarnings("ignore")
 
 os.environ["JOBLIB_MULTIPROCESSING"] = "0"
 os.environ["LOKY_MAX_CPU_COUNT"] = "1"
@@ -28,8 +31,7 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 r2 = metrics.r2_score(y_test, y_pred)
-r2_percentage = int(r2 * 100)
-print(f"Model trained. Accuracy: {r2_percentage}%")
+print(f"Model trained. Accuracy: {int(r2 * 100)}%")
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
