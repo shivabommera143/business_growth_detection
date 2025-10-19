@@ -11,7 +11,7 @@ os.environ["LOKY_MAX_CPU_COUNT"] = "1"
 app = Flask(__name__, template_folder="../templates")
 
 # Load dataset
-df = pd.read_csv(os.path.join(os.path.dirname(__file__), "../50_Startups.csv"))
+df = pd.read_csv("50_Startups.csv"))
 df = df.drop('State', axis=1)
 
 # Train model
