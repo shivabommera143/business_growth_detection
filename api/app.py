@@ -12,7 +12,7 @@ os.environ["LOKY_MAX_CPU_COUNT"] = "1"
 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH = os.path.join("50_Startups.csv")
+CSV_PATH = os.path.join("https://github.com/shivabommera143/business_growth_detection/blob/c5614d21fa1049d9c6ef296c0b72af4d53bfad8a/50_Startups.csv")
 
 app = Flask(__name__, template_folder="../templates")
 
