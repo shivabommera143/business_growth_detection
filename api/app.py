@@ -50,3 +50,6 @@ def favicon():
     return '', 204
 
 handler = Mangum(app)
+
+if __name__ == "__main__":
+    app.run(debug=True)
