@@ -5,6 +5,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 from mangum import Mangum
 import os
+os.environ["JOBLIB_MULTIPROCESSING"] = "0"
+os.environ["LOKY_MAX_CPU_COUNT"] = "1"
 
 app = Flask(__name__, template_folder="../templates")
 
