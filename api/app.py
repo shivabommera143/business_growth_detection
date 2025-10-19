@@ -11,7 +11,7 @@ os.environ["LOKY_MAX_CPU_COUNT"] = "1"
 app = Flask(__name__, template_folder="../templates")
 
 # Load dataset
-df = pd.read_csv("50_Startups.csv"))
+df = pd.read_csv("https://github.com/shivabommera143/business_growth_detection/blob/a6e1c3a52a2327d6d0910d350c330f74164e7ef9/50_Startups.csv"))
 df = df.drop('State', axis=1)
 
 # Train model
